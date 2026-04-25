@@ -13,16 +13,16 @@ types and income groups.
 The analysis uses two data sources:
 
 **1. Italian Household Budget Survey (HBS)**
-Micro-level data on household expenditure collected by ISTAT. Each row represents
+Micro-level data on household expenditure collected by ISTAT, for the year 2023. Each row represents
 one household and contains monthly expenditure on individual food items, household
 size, region, survey weights, and demographic information on each household member.
-The data is publicly available from ISTAT at: [add direct link here]
+The data is publicly available from ISTAT at: https://www.istat.it/microdati/indagine-sulle-spese-delle-famiglie-uso-pubblico/
 
 **2. Regional retail price data (Osservatorio Prezzi)**
 Monthly average retail prices for meat products at the provincial level, manually
 collected from the Italian Ministry of Enterprise and Made in Italy's Osservatorio
-Prezzi e Tariffe (https://www.prezzi.it). Prices were recorded for each available
-province and food category, then cleaned and harmonised using the Python scripts
+Prezzi e Tariffe, at: https://osservaprezzi.mise.gov.it/prezzi/livelli/beni-e-servizi-di-largo-consumo
+Prices were recorded for each available province and food category, then cleaned and harmonised using the Python scripts
 described below.
 
 ---
@@ -38,11 +38,10 @@ Elasticities are computed analytically from the model coefficients and standard
 errors are obtained via parametric bootstrap (1000 draws from the joint distribution
 of the estimated coefficients).
 
-The carbon tax is set at **EUR 0.08 per kg CO2e** and applied proportionally to
-each meat category based on its GHG emissions intensity (source: [add reference]).
+The carbon tax is set at **EUR 0.09 per kg CO2e** and applied proportionally to
+each meat category based on its GHG emissions intensity.
 Welfare effects are measured using the **compensating variation (CV)**, computed
-via Hicksian elasticities derived from the Slutsky equation. A consumer surplus
-approximation (trapezoid method) is also reported for comparison. Tax revenue is
+via Hicksian elasticities derived from the Slutsky equation. Tax revenue is
 assumed to be recycled as a uniform per-capita rebate.
 
 ---
